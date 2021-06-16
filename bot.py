@@ -22,7 +22,7 @@ async def on_command_error(ctx, error):
 # Commands
 @client.command()   #Give info about the bot
 async def info(ctx):
-    await ctx.send(f'**Drip Charrier Bot**\nCreated by: *Sean BOGOSAVAC*\nV0.3 pre-Alpha')
+    await ctx.send(f'**Drip Charrier Bot**\nCreated by: *Sean BOGOSAVAC*\nV0.4 pre-Alpha')
 
 @client.command()   #Switch the bot to ready mode
 async def lessgo(ctx):
