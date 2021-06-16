@@ -8,17 +8,17 @@ class Fun(commands.Cog):
         self.client = client
 
     # Events
-    @commands.Cog.listener()
+    @commands.Cog.listener()    #Shows the cog is fully loaded
     async def on_ready(self):
         print('Fun Cog loaded')
 
     # Commands
-    @commands.command(aliases=['DripCharrier'])
-    async def _8ball(self, ctx, *, question):
+    @commands.command() #Gives Drip Charrier's predictions
+    async def DripCharrier(self, ctx, *, question):
         responses = ['Ouais', 'Nope', 'Fallait dripper plus que ça frère!']
         await ctx.send(f'{random.choice(responses)}')
 
-    @commands.command()
+    @commands.command() #Gives a random famous Drip Charrier quote
     async def citation(self, ctx):
         Quotes = ["C'est un petit détail mais c'est avec les petits détails qu'on... voila quoi",
         "*Rire nerveux*",

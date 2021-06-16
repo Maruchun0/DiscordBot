@@ -7,12 +7,12 @@ class Basic(commands.Cog):
         self.client = client
 
     # Events
-    @commands.Cog.listener()
+    @commands.Cog.listener()    #Shows the cog is fully loaded
     async def on_ready(self):
         print('Basic Cog loaded')
 
     # Commands
-    @commands.command()
+    @commands.command() #Shows the latency of the bot
     async def ping(self, ctx):
         await ctx.send(f'My ice only took {round(self.client.latency * 1000)} miliseconds to drip!')
 

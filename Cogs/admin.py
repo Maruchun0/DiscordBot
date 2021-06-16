@@ -7,25 +7,25 @@ class Admin(commands.Cog):
         self.client = client
 
     # Events
-    @commands.Cog.listener()
+    @commands.Cog.listener()    #Shows the cog is fully loaded
     async def on_ready(self):
         print('Admin Cog loaded')
 
     # Commands
-    @commands.command()
+    @commands.command() #Clears the 5 previous messages
     async def clear(self, ctx, amount = 5):
         await ctx.channel.purge(limit = amount)
 
-    @commands.command()
+    @commands.command() #Kicks the selected user
     async def kick(self, ctx, member : discord.Member, *, reason=None):
         await member.kick(reason = reason)
 
-    @commands.command()
+    @commands.command() #Bans the selected user
     async def ban(self, ctx, member : discord.Member, *, reason=None):
         await member.ban(reason = reason)
         await ctx.send(f'{member.mention} is not allowed to drip anymore!')
 
-    @commands.command()
+    @commands.command() #Unbans the selected user
     async def unban(self, ctx, *, member):
         banned_users = await ctx.guild.bans()
         member_name, member_discriminator = member.split('#')
