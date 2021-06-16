@@ -3,30 +3,30 @@ from discord.ext import commands
 import random
 import os
 
-bot = commands.Bot(command_prefix = 'sheesh ')
+client = commands.Bot(command_prefix = 'sheesh ')
 
-@bot.command()
+@client.command()
 async def load(ctx, extension):
-    client.load_extension(f'cogs.{extension}')
+    client.load_extension(f'Cogs.{extension}')
 
-@bot.command()
+@client.command()
 async def unload(ctx, extension):
-    client.unload_extension(f'cogs.{extension}')
+    client.unload_extension(f'Cogs.{extension}')
 
-@bot.event
+@client.event
 async def on_memeber_join(member):
     print(f'{member} is here to drip')
 
-@bot.event
+@client.event
 async def on_member_remove(member):
     print(f'{member} did not have enough ice to stay here')
 
-@bot.command(aliases=['DripCharrier'])
+@client.command(aliases=['DripCharrier'])
 async def _8ball(ctx, *, question):
     responses = ['Ouais', 'Nope', 'Fallait dripper plus que ça frère!']
     await ctx.send(f'{random.choice(responses)}')
 
-@bot.command()
+@client.command()
 async def citation(ctx):
     Quotes = ["C'est un petit détail mais c'est avec les petits détails qu'on... voila quoi",
     "*Rire nerveux*",
@@ -34,20 +34,20 @@ async def citation(ctx):
     "Et comme l'a dit un jour mon élève préféré, 'Celui qui a recopié l'exo, c'est vraiment un connard!'"]
     await ctx.send(f'**{random.choice(Quotes)}**\nDrip Charrier, out *Drop the mic*')
 
-@bot.command()
+@client.command()
 async def clear(ctx, amount = 5):
     await ctx.channel.purge(limit = amount)
 
-@bot.command()
+@client.command()
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason = reason)
 
-@bot.command()
+@client.command()
 async def ban(ctx, member : discord.Member, *, reason=None):
     await member.ban(reason = reason)
     await ctx.send(f'{member.mention} is not allowed to drip anymore!')
 
-@bot.command()
+@client.command()
 async def unban(ctx, *, member):
     banned_users = await ctx.guild.bans()
     member_name, member_discriminator = member.split('#')
@@ -60,6 +60,6 @@ async def unban(ctx, *, member):
             return
 
 for file in os.listdir('./Cogs'):
-    if file.endswith('.py'): bot.load_extension(f'cogs.{file[:-3]}')
+    if file.endswith('.py'): client.load_extension(f'Cogs.{file[:-3]}')
 
-bot.run('ODUxNDUwNzI4NDQ5ODM1MDEy.YL4dSA.lbncSmANpku6PUcl1c6R9WMDjig')
+client.run('ODUxNDUwNzI4NDQ5ODM1MDEy.YL4dSA.monlrUFVIzHNZ_pQZFtMxhfD0m4')
