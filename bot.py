@@ -14,6 +14,11 @@ async def on_ready():
     await client.change_presence(status = discord.Status.dnd, activity = discord.Activity(type=discord.ActivityType.playing, name="Coding, do not touch"))
     print('Bot ready')
 
+@client.event   #Returns error if the command does not exist
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send(f"Cette commande n'existe pas *rire nerveux*")
+
 # Commands
 @client.command()   #Give info about the bot
 async def info(ctx):

@@ -13,8 +13,12 @@ class Admin(commands.Cog):
 
     # Commands
     @commands.command() #Clears the 5 previous messages
-    async def clear(self, ctx, amount = 5):
+    async def clear(self, ctx, amount : int):
         await ctx.channel.purge(limit = amount)
+    @clear.error        #Returns error in case of missing argument
+    async def clear_error(self, ctx, error):
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.send('Précise le nombre de messages *rire nerveux*')
 
     @commands.command() #Kicks the selected user
     async def kick(self, ctx, member : discord.Member, *, reason=None):
