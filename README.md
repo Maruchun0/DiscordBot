@@ -1,9 +1,13 @@
 # DiscordBot
 Bah c'est un bot quoi... pour Discord
 
+## V0.5:
+- Création d'une sécurité empêchant les non-admin d'utiliser des commandes administrateurs
+- Création d'une sécurité n'authorisant que moi à changer le status du bot
+
 ## V0.4b:
 - Fix du commit GitHub
-- Premier listing des différents rajouts dans le readme.txt
+- Premier listing des différents rajouts dans le fichier README.md
 
 ## V0.4:
 - Ajout d'un système d'erreurs
