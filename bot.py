@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands, tasks
 from itertools import cycle
-import os
 
 # Variables
 client = commands.Bot(command_prefix = 'sheesh ')
@@ -60,4 +59,5 @@ async def change_status():
 
 #Runs the bot
 client.load_extension(f'Cogs.basic')
-client.run('ODUxNDUwNzI4NDQ5ODM1MDEy.YL4dSA.monlrUFVIzHNZ_pQZFtMxhfD0m4')
+token = open("token.txt", 'r').read()
+client.run(token)
