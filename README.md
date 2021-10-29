@@ -1,6 +1,11 @@
 # DiscordBot
 Bah c'est un bot quoi... pour Discord
 
+## V0.6:
+- Division de la commande DripCharrier
+- Mise en public du bot
+- Changement du token de connection dû à la mise en public
+
 ## V0.5:
 - Création d'une sécurité empêchant les non-admin d'utiliser des commandes administrateurs
 - Création d'une sécurité n'authorisant que moi à changer le status du bot

@@ -15,6 +15,11 @@ class Fun(commands.Cog):
     # Commands
     @commands.command() #Gives Drip Charrier's predictions
     async def DripCharrier(self, ctx, *, question):
+        responses = ['Ouais', 'Nope']
+        await ctx.send(f'{random.choice(responses)}')
+
+    @commands.command() #Gives Drip Charrier's predictions
+    async def question(self, ctx, *, question):
         responses = ['Ouais', 'Nope', 'Fallait dripper plus que ça frère!']
         await ctx.send(f'{random.choice(responses)}')
 
